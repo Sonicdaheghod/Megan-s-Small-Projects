@@ -1,6 +1,9 @@
+#game template credit to freecodecamp.org
+#https://www.youtube.com/watch?v=8ext9G7xspg&t=1274s
+
 import random
 
-#starting th efunction
+#starting the function
 def play():
     print("-------Ultimate Rock, Paper, Scissors Game!--------\n")
     user = input("What's your choice? 'r' for rock, 'p' for paper', or 's' for scissors?\n")
@@ -20,7 +23,7 @@ def is_win(player,opponent):
     if(player == 'r' and opponent == 's') or (player == 'p' and opponent == 'r') or (player == 's' and opponent == 'p'):
         return True
 
-#keep game going, set play again variable
+#keep game going, set play again variable (working on now)
 
 print(play())
-#need this to start the game lol
+#need this to start the game 
