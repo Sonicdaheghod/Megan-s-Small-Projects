@@ -2,7 +2,6 @@
 gameBoard = ["_","_","_",
             "_","_","_",
             "_","_","_",]
-
 #defining format of the board 3x3
 def displaygameBoard():
     print("|" + gameBoard[0] + "|" + gameBoard[1]+ "|" + gameBoard[2] + "|")
@@ -12,19 +11,41 @@ def displaygameBoard():
 #defining the function for the game aspect
 def beginGame():
 
-#have terminal bring up the board we made and the function where user places thier piece
+#have terminal bring up the board we made
     displaygameBoard()
 
-    whoseTurn()
+ while gameRunning: 
+#these three functions below are what the terminal will follow while running the game of tic tac toe (after person makes a move, it sees if the game should end, if not then the other user makes a move,then its goes through the process again)
+    theTurn(currentUser)
+
+    isGameOver()
+
+    otherPlayerTurn()
 
 #having user tell us where they want to put their piece on board
-def whoseTurn():
+def theTurn():
     placeBoard = input("Choose a position from 0-8\n")
     placeBoard = int(placeBoard) 
-            
 #getting something to be placed on board based on user input
     gameBoard[placeBoard] = "X"
     displaygameBoard()
 
+#bringing the "isGameOver" fucntion to work
+def isGameOver():
+    isWinner()
+    bothTie()
+
+#defining the winner function
+def isWinner():
+    return
+#defining the tie function
+def bothTie():
+    return
+
+#Time to define function to change whose turn it is
+def otherPlayerTurn():
+    return
 #run program to bring up the board game and its function
 beginGame()
+
+#21:30 https://www.youtube.com/watch?v=BHh654_7Cmw
