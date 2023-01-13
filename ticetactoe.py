@@ -59,4 +59,4 @@ def otherPlayerTurn():
 beginGame()
 
 #23:21 https://www.youtube.com/watch?v=BHh654_7Cmw
-#21:30 https://www.youtube.com/watch?v=BHh654_7Cmw
+
