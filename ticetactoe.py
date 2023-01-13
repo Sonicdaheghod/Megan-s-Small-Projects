@@ -2,6 +2,16 @@
 gameBoard = ["_","_","_",
             "_","_","_",
             "_","_","_",]
+
+#seeing that the game itself is still going
+gameRunning = True
+
+#Who is winner? Is there a tie?
+isWinner = None
+
+#Whos turn is it right now
+currentUser = "X"
+
 #defining format of the board 3x3
 def displaygameBoard():
     print("|" + gameBoard[0] + "|" + gameBoard[1]+ "|" + gameBoard[2] + "|")
@@ -48,4 +58,5 @@ def otherPlayerTurn():
 #run program to bring up the board game and its function
 beginGame()
 
+#23:21 https://www.youtube.com/watch?v=BHh654_7Cmw
 #21:30 https://www.youtube.com/watch?v=BHh654_7Cmw
