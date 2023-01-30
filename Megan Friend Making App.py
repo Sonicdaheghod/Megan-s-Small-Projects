@@ -32,13 +32,18 @@ class theToDoList:
             font= "Times, 22 bold", width=15,bd=13, bg = "lightseagreen", fg = "black")
         self.label.pack(side="top", fill=BOTH)
         #position for the button
-        self.thirdLabel.place(x=650, y=90)
+        self.thirdLabel.place(x=750, y=90)
 
     #text box that shows all the resources
         self.boxResources = Listbox(self.root,
             height = 14, bd = 4, width = 45, font = "Times, 20 italic bold") 
         #position of text box
         self.boxResources.place(x = 550, y = 170)
+
+    #adding text box under where user can add resources by typing what they want in it
+        self.textBox = Text(self.root,font= "Times, 20 bold", height = 2.25, width=30,bd=10)
+        self.textBox.place(x=20, y = 170)
+
 #starting execution of program point
 def main():
     root = Tk() #tk helps bring many tools for the application I am making
@@ -47,8 +52,10 @@ def main():
     root.mainloop()
     #mainloop allows the todo list to identify for actions from user such as clicking until the user exits it
 
+
+    
 if __name__ == "__main__":
     main()
 
 #Video used: https://www.youtube.com/watch?v=mmpVsw8aXi4&list=PLXCw5VdOQb7gCT0gC5jg66carWh48JcOy&index=4 
-# bookmark https://youtu.be/mmpVsw8aXi4?t=636
+# bookmark https://youtu.be/mmpVsw8aXi4?t=995
