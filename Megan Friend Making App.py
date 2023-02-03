@@ -58,6 +58,15 @@ class theToDoList:
         def deleteResource():
             removeResource = self.boxResources.curselection()
             getResourceToDelete = self.boxResources.get(removeResource)
+            with open("appData.txt","r+") as f: #r+ determines number of bytes in a file
+                newF = f.readlines()
+                f.seek(0) #seek changes the position of file to a given position
+                for line in newF:
+                    item = str(getResourceToDelete)
+                    if item not in line:
+                        f.write(line)
+                    f.truncate() #resizes file to given number of bytes
+
 #starting execution of program point
 def main():
     root = Tk() #tk helps bring many tools for the application I am making
@@ -72,4 +81,4 @@ if __name__ == "__main__":
     main()
 
 #Video used: https://www.youtube.com/watch?v=mmpVsw8aXi4&list=PLXCw5VdOQb7gCT0gC5jg66carWh48JcOy&index=4 
-# bookmark https://youtu.be/mmpVsw8aXi4?t=1409
+# bookmark https://youtu.be/mmpVsw8aXi4?t=1531
