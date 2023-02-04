@@ -10,7 +10,7 @@ from tkinter import ttk
 
 #------make a user interface window--------
 #making a class
-class theToDoList:
+class theFriendApp:
     def __init__(self, root):
         self.root = root
     #creating title to show up on application
@@ -91,7 +91,7 @@ class theToDoList:
 def main():
     root = Tk() #tk helps bring many tools for the application I am making
 #root is a window where different tools go to 
-    userInterface = theToDoList(root)
+    userInterface = theFriendApp(root)
     root.mainloop()
     #mainloop allows the todo list to identify for actions from user such as clicking until the user exits it
 
@@ -99,3 +99,5 @@ def main():
     
 if __name__ == "__main__":
     main()
+
+
