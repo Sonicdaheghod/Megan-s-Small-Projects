@@ -1,4 +1,8 @@
-#making a Friend making app 
+#Video used as reference: https://www.youtube.com/watch?v=mmpVsw8aXi4&list=PLXCw5VdOQb7gCT0gC5jg66carWh48JcOy&index=4 
+#making a Friend making app
+#Significance of this program: I have read some articles about college students and even adults having trouble making new friends.  
+    #As a result, I was inspired to create this program to help these people learn and understand how to make friends using the resources this app can provide to them. 
+    #This user interface allows the user to control what resources they want to use that aids them in their friend-making journey.
 
 #tkinter helps make the user interface for the app
 from tkinter import *
@@ -21,11 +25,11 @@ class theToDoList:
         self.label.pack(side="top", fill=BOTH)
 
     #adding the button: "add task"
-        self.secondLabel = Label(self.root, text= "Add Additional Resources",
-            font= "Times, 22 bold", width=20,bd=13, bg = "lightseagreen", fg = "black")
+        self.secondLabel = Label(self.root, text= "Additional Friendly Resources",
+            font= "Times, 22 bold", width=25,bd=13, bg = "lightseagreen", fg = "black")
         self.label.pack(side="top", fill=BOTH)
         #position for the button
-        self.secondLabel.place(x=45, y=90)
+        self.secondLabel.place(x=20, y=90)
 
     #adding label that shows the collective list of resources
         self.thirdLabel = Label(self.root, text= "Resources",
@@ -66,7 +70,23 @@ class theToDoList:
                     if item not in line:
                         f.write(line)
                     f.truncate() #resizes file to given number of bytes
+                self.boxResources.delete(removeResource) #must keep "delete" since that is the corresponding function for delete button to work.
 
+        with open("appData.txt", "r") as file:
+            readFile = file.readlines()
+            for i in readFile:
+                isReady = i.split() #split makes things in a string into a list format
+                self.boxResources.insert(END, isReady)
+            file.close()
+
+        #creating button for adding and deleting a resource
+
+        ##1- "add resource" button
+        self.button = Button(self.root, text="Add", font= "Times, 22 bold", fg="lightcoral",command = addResource)
+        self.button.place(x=20, y = 200)
+        ##2-"delete resource" button
+        self.button = Button(self.root, text="Delete", font= "Times, 22 bold", fg="lightcoral",command = deleteResource)
+        self.button.place(x=40, y = 200)
 #starting execution of program point
 def main():
     root = Tk() #tk helps bring many tools for the application I am making
@@ -79,6 +99,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-#Video used: https://www.youtube.com/watch?v=mmpVsw8aXi4&list=PLXCw5VdOQb7gCT0gC5jg66carWh48JcOy&index=4 
-# bookmark https://youtu.be/mmpVsw8aXi4?t=1531
