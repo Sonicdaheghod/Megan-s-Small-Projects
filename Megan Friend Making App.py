@@ -55,6 +55,12 @@ class theFriendApp:
         #position for the button
         self.fourthLabel.place(x=65, y=370)
 
+    #adding text box that includes recommended resources
+        self.thirdLabel = Label(self.root, text= "- BumbleBFF",
+            font= "Times, 22 italic", anchor = "w", width=15,bd=65, bg = "white", fg = "black")
+        self.label.pack(side="top", fill=BOTH)
+        #position for the button
+        self.thirdLabel.place(x=65, y=450)
     #-------Making the function so that user can add and delete a resource on list-------------
         def addResource():
             resourceInput = self.textBox.get(1.0,END)
