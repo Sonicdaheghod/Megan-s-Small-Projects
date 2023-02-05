@@ -21,18 +21,18 @@ class theFriendApp:
 
     #sets the title of the program for users to see on interface and decorates it based on font/color
         self.label = Label(self.root, text= "The App That Helps You Make Friends!",
-            font= "Times, 30 bold", width=20,bd=10, bg = "lightseagreen", fg = "black")
+            font= "Times, 30 bold", width=20,bd=10, bg = "turquoise", fg = "black")
         self.label.pack(side="top", fill=BOTH)
 
     #adding the button: "add task"
-        self.secondLabel = Label(self.root, text= "Additional Friendly Resources",
-            font= "Times, 22 bold", width=25,bd=13, bg = "lightseagreen", fg = "black")
+        self.secondLabel = Label(self.root, text= "Add Resources",
+            font= "Times, 22 bold", width=15,bd=13, bg = "lightseagreen", fg = "black")
         self.label.pack(side="top", fill=BOTH)
         #position for the button
-        self.secondLabel.place(x=20, y=90)
+        self.secondLabel.place(x=110, y=90)
 
     #adding label that shows the collective list of resources
-        self.thirdLabel = Label(self.root, text= "Resources",
+        self.thirdLabel = Label(self.root, text= "My Resources",
             font= "Times, 22 bold", width=15,bd=13, bg = "lightseagreen", fg = "black")
         self.label.pack(side="top", fill=BOTH)
         #position for the button
@@ -47,6 +47,13 @@ class theFriendApp:
     #adding text box under where user can add resources by typing what they want in it
         self.textBox = Text(self.root,font= "Times, 20 bold", height = 2.25, width=30,bd=10)
         self.textBox.place(x=20, y = 170)
+
+    #adding recommended resources textbox label
+        self.fourthLabel = Label(self.root, text= "Recommended Resources",
+            font= "Times, 22 bold", width=20,bd=13, bg = "lightseagreen", fg = "black")
+        self.label.pack(side="top", fill=BOTH)
+        #position for the button
+        self.fourthLabel.place(x=65, y=370)
 
     #-------Making the function so that user can add and delete a resource on list-------------
         def addResource():
@@ -82,11 +89,11 @@ class theFriendApp:
         #creating button for adding and deleting a resource
 
         ##1- "add resource" button
-        self.button = Button(self.root, text="Add", font= "Times, 22 bold", fg="lightcoral",command = addResource)
-        self.button.place(x=20, y = 200)
+        self.button = Button(self.root, text="Add", font= "Times, 22 bold", bg = "lightcoral", fg = "black",command = addResource)
+        self.button.place(x=40, y = 270, width = 150)
         ##2-"delete resource" button
-        self.button = Button(self.root, text="Delete", font= "Times, 22 bold", fg="lightcoral",command = deleteResource)
-        self.button.place(x=40, y = 200)
+        self.button = Button(self.root, text="Delete", font= "Times, 22 bold", bg = "lightcoral", fg = "black",command = deleteResource)
+        self.button.place(x=310, y = 270, width = 150)
 #starting execution of program point
 def main():
     root = Tk() #tk helps bring many tools for the application I am making
