@@ -1,5 +1,5 @@
-# Practicing using API- Python
-#reference website: https://www.dataquest.io/blog/python-api-tutorial/
+# Significance of this project: 
+# reference website: https://www.dataquest.io/blog/python-api-tutorial/
 # I will practice using API with from mnowotka's JSON of chemical molecules
 
 #getting some data from a given webstie so we can see its status (404, 200, etc.)
