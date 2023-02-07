@@ -1,4 +1,5 @@
 #Here, I am practicing how to loop a game
+#Reference video: https://www.youtube.com/watch?v=8ext9G7xspg
 
 import random
 
