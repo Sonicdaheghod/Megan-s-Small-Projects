@@ -1,12 +1,19 @@
-# Significance of this project: 
-# reference website: https://www.dataquest.io/blog/python-api-tutorial/
-# I will practice using API with from mnowotka's JSON of chemical molecules
+# Significance of this project: To better understand the intricacies of an API and its applications
+# reference video: Intermediate Python for Non-Programmers by Nick Walters on Linkedin Learning
+# I will practice using API using weather data from Ireland
 
-#getting some data from a given webstie so we can see its status (404, 200, etc.)
+
+##API key: 6cd640b6d94034814baef94446b8b3ff
+
+#Plugging in API, lat and longtitude for Ireland using API key to get data 
+#https://api.openweathermap.org/data/2.5/weather?lat=53.1424&lon=7.6921&appid=6cd640b6d94034814baef94446b8b3ff
+
+
+#importing package
 import requests
-response = requests.get("https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL25.json")
+# first we have to install requests using "pip install requests"
 
-print(response.status_code)
+output = requests.get("https://api.openweathermap.org/data/2.5/weather?lat=53.1424&lon=7.6921&appid=6cd640b6d94034814baef94446b8b3ff")
 
-#seeing the data from the JSON we are using
-print(response.json())
+#this will print out the JSON data about Ireland as well as its source code(200 = work well, 404 = error, etc.)
+print(output.content)
