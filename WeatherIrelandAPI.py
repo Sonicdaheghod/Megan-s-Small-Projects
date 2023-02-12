@@ -3,6 +3,8 @@
 # I will practice using API using weather data from Ireland
 
 
+#JSON validator: reformats JSON data https://jsonlint.com/
+
 ##API key: 6cd640b6d94034814baef94446b8b3ff
 
 #Plugging in API, lat and longtitude for Ireland using API key to get data 
@@ -12,8 +14,18 @@
 #importing package
 import requests
 # first we have to install requests using "pip install requests"
+## apply try except 
+try:
+    response = requests.get("https://api.openweathermap.org/data/2.5/weather?units=metric&lat=53.1424&lon=7.6921&appid=6cd640b6d94034814baef94446b8b3ff")
 
-output = requests.get("https://api.openweathermap.org/data/2.5/weather?lat=53.1424&lon=7.6921&appid=6cd640b6d94034814baef94446b8b3ff")
-
+except:
+    print("An error occured.")
 #this will print out the JSON data about Ireland as well as its source code(200 = work well, 404 = error, etc.)
-print(output.content)
+
+output_json = response.json()
+
+#define variables using data from JSON
+wind = output_json["wind"]["speed"]
+
+#utilizing variables in print statements
+print("The wind speed outside is " + str(wind) + " mph")
