@@ -34,8 +34,10 @@ print("The wind speed in Ireland is " + str(wind) + " mph")
 class City:
     def __init__(self,name, feels_like, units="metric"):
         self.name = name
+        
         self.feels_like= feels_like
         self.units = units
+        self.retrieveInfo() #goes through the retrieveInfo function to get its info
     #we need a new function in the class that calls for the API
     def retrieveInfo(self):
         try:
@@ -46,5 +48,16 @@ class City:
 
         output_json = response.json()
         self.wind = output_json["wind"]["speed"]
+        self.feels_like = output_json["main"]["feels_like"]
+        
         print("The wind speed in Ireland is " + str(wind) + " mph")
         #self helps us access all instances of a specific class
+
+    def weatherDescription(self):
+     
+        print(f"In Ireland it is {self.feels_like}°C outside.")
+        
+
+theCity = City("Strücklingen",7.6921,53.1424)
+theCity.weatherDescription()
+
