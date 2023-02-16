@@ -1,0 +1,22 @@
+#For this project, I am practicing using JSON data from the Pokemon Go data API myself
+
+#JSON validator: reformats JSON data https://jsonlint.com/
+#source code: https://rapidapi.com/hub
+
+#first step is to import
+import requests
+
+#this is the api for pokemon stats
+url = "https://pokemon-go1.p.rapidapi.com/pokemon_stats.json"
+
+#includes the personal key and its host
+headers = {
+	"X-RapidAPI-Key": "5cd9effc00mshfca5e282e256823p1e3018jsnb3546e1ceae4",
+	"X-RapidAPI-Host": "pokemon-go1.p.rapidapi.com"
+}
+
+response = requests.request("GET", url, headers=headers)
+
+#to get terminal to output the JSON
+print(response.text)
+
