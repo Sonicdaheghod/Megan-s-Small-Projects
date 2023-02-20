@@ -55,20 +55,50 @@ chemHangmanIcons = ['''
                                 |
                                 |
 ========================================''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
++-------------------------------+
+              |                 |
+             _|_                |
+            /   \               |
+            O   O               |
+             \ /                |
+                                |
+                                |
+                                |
+                                | 
+                                | 
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+========================================''', '''
++-------------------------------+
+              |                  |
+             _|_                 |
+            /   \                |
+            O   O                |
+             \ /                 |
+              |                  |
+            //  \                |
+          | /    ||              |
+          |      ||              | 
+          \\      /              | 
+            \\  /                |
+                                 |
+                                 |
+                                 |
+                                 |
+                                 |
+                                 |
+                                 |
+                                 |
+                                 |
+========================================''', '''
   +---+
   |   |
   O   |
@@ -126,13 +156,16 @@ chemHangmanIcons = ['''
 
 #setting up game
 
-#1)getting random word for user to guess
+#1-getting random word for user to guess
 import random
 from GeneralChemistryTerms import genChemWords
 
 def useWord(genChemWords):
   genChemWord = random.choice(genChemWords)
+  while "-" in genChemWord or " " in genChemWord:
+    genChemWord = random.choice(genChemWords)
 
+  return genChemWord
 
 
  
