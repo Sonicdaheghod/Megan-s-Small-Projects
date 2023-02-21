@@ -2,6 +2,7 @@
 
 #credit for hangman and wordbank template: <script src="https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c"
 #Hangman game code based on: https://www.youtube.com/watch?v=cJJTnI22IF8
+#timestamp:https://youtu.be/cJJTnI22IF8?t=246
 
 #Here, I want to create a storage space for the images of hangman and chemistry terms
 nanoputian  = ['''
@@ -78,48 +79,95 @@ chemHangmanIcons = ['''
                                 |
 ========================================''', '''
 +-------------------------------+
-              |                  |
-             _|_                 |
-            /   \                |
-            O   O                |
-             \ /                 |
-              |                  |
-            //  \                |
-          | /    ||              |
-          |      ||              | 
-          \\      /              | 
-            \\  /                |
-                                 |
-                                 |
-                                 |
-                                 |
-                                 |
-                                 |
-                                 |
-                                 |
-                                 |
+              |                 |
+             _|_                |
+            /   \               |
+            O   O               |
+             \ /                |
+              |                 |
+            //  \               |
+          | /    ||             |
+          |      ||             | 
+          \\      /             | 
+            \\  /               |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
 ========================================''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
++-------------------------------+
+              |                 |
+     \|/     _|_                |
+      \     /   \               |
+      \\\   O   O               |
+       \\\   \ /                |
+         \    |                 |
+          \ //  \               |
+          | /    ||             |
+          |      ||             | 
+          \\      /             | 
+            \\  /               |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+========================================''', '''
++-------------------------------+
+              |                 |
+     \|/     _|_     \|/        |
+      \     /   \    /          |
+      \\\   O   O  ///          |
+       \\\   \ /  ///           |
+         \    |   /             |
+          \ //  \/              |
+          | /    ||             |
+          |      ||             | 
+          \\      /             | 
+            \\  /               |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+========================================''', '''
++-------------------------------+
+              |                 |
+     \|/     _|_     \|/        |
+      \     /   \    /          |
+      \\\   O   O  ///          |
+       \\\   \ /  ///           |
+         \    |   /             |
+          \ //  \/              |
+          | /    ||             |
+          |      ||             | 
+          \\      /             | 
+            \\  /               |
+              |                 |
+              |                 |
+            /                   |
+           /                    |
+     ____/                      |
+                                |
+                                |
+                                |
+                                |
+                                |
+                                |
+========================================''', '''
 +-------------------------------+
               |                 |
      \|/     _|_     \|/        |
@@ -156,9 +204,10 @@ chemHangmanIcons = ['''
 
 #setting up game
 
-#1-getting random word for user to guess
+#1-getting random word from list for user to guess
 import random
 from GeneralChemistryTerms import genChemWords
+import string
 
 def useWord(genChemWords):
   genChemWord = random.choice(genChemWords)
@@ -166,6 +215,13 @@ def useWord(genChemWords):
     genChemWord = random.choice(genChemWords)
 
   return genChemWord
+
+#2-setting up the hangman game
+def chemHangman():
+  genChemWords = useWord(genChemWords)
+  letters.genChemWords = set(genChemWords) #depicts the seperate letters of a word
+  chemAlphabet = set(string.ascii_uppercase)
+
 
 
  
