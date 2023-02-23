@@ -2,7 +2,7 @@
 
 #credit for hangman and wordbank template: <script src="https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c"
 #Hangman game code based on: https://www.youtube.com/watch?v=cJJTnI22IF8
-#timestamp:https://youtu.be/cJJTnI22IF8?t=271
+#timestamp:https://youtu.be/cJJTnI22IF8?t=312
 
 #Here, I want to create a storage space for the images of hangman and chemistry terms
 nanoputian  = ['''
@@ -230,6 +230,11 @@ def chemHangman():
   if userAttempt in chemAlphabet - lettersGuessed:
     userAttempt.add(userAttempt)
 
+
+
+
+
+ 
 
 
 
