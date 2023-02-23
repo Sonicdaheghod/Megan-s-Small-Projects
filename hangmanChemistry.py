@@ -221,13 +221,16 @@ def chemHangman():
   genChemWords = useWord(genChemWords)
   letters.genChemWords = set(genChemWords) #depicts the seperate letters of a word
   chemAlphabet = set(string.ascii_uppercase)
-
   #storing letters user already guessed 
   lettersGuessed = set()
 
   #need to have somethign that asks the user to type in a letter
-userAttempt = input("Make a guess:")
-print(userAttempt)
+  userAttempt = input("Make a guess:").upper()
+  #if what the user guessed is part of the word used for game
+  if userAttempt in chemAlphabet - lettersGuessed:
+    userAttempt.add(userAttempt)
+
+
 
 
 
