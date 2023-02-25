@@ -2,7 +2,7 @@
 
 #credit for hangman and wordbank template: <script src="https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c"
 #Hangman game code based on: https://www.youtube.com/watch?v=cJJTnI22IF8
-#timestamp:https://youtu.be/cJJTnI22IF8?t=312
+#timestamp:https://youtu.be/cJJTnI22IF8?t=342
 
 #Here, I want to create a storage space for the images of hangman and chemistry terms
 nanoputian  = ['''
@@ -219,7 +219,7 @@ def useWord(genChemWords):
 #2-setting up the hangman game
 def chemHangman():
   genChemWords = useWord(genChemWords)
-  letters.genChemWords = set(genChemWords) #depicts the seperate letters of a word
+  letterGenChemWords = set(genChemWords) #depicts the seperate letters of a word
   chemAlphabet = set(string.ascii_uppercase)
   #storing letters user already guessed 
   lettersGuessed = set()
@@ -228,7 +228,21 @@ def chemHangman():
   userAttempt = input("Make a guess:").upper()
   #if what the user guessed is part of the word used for game
   if userAttempt in chemAlphabet - lettersGuessed:
-    userAttempt.add(userAttempt)
+    lettersGuessed.add(userAttempt)
+    if userAttempt in letterGenChemWords:
+      #since of the blank decreases since they user correctly guessed letter
+      letterGenChemWords.remove(userAttempt)
+
+
+#if user chooses a letter they already used
+  elif userAttempt in lettersGuessed:
+    print("Guess a letter you haven't used yet.")
+
+
+
+
+
+ 
 
 
 
