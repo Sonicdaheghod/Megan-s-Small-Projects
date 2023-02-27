@@ -214,41 +214,44 @@ def useWord(genChemWords):
   while "-" in genChemWord or " " in genChemWord:
     genChemWord = random.choice(genChemWords)
 
-  return genChemWord
+  return genChemWord.upper()
 
 #2-setting up the hangman game
 def chemHangman():
-  genChemWords = useWord(genChemWords)
-  letterGenChemWords = set(genChemWords) #depicts the seperate letters of a word
+  genChemWord = useWord(genChemWords)
+  letterGenChemWords = set(genChemWord) #depicts the seperate letters of a word
   chemAlphabet = set(string.ascii_uppercase)
   #storing letters user already guessed 
   lettersGuessed = set()
 
   #need to have somethign that asks the user to type in a letter
-  userAttempt = input("Make a guess:").upper()
-  #if what the user guessed is part of the word used for game
-  if userAttempt in chemAlphabet - lettersGuessed:
-    lettersGuessed.add(userAttempt)
-    if userAttempt in letterGenChemWords:
+  #This whole function should run only when the amount of blank spaces for guessign the word is not all gone
+  while len(letterGenChemWords) > 0:
+    #we want to display to user what letters they already used
+    print("These are the letters you used: "," ".join(lettersGuessed))
+    
+    listChemWord = [letter if letter in lettersGuessed else '_' for letter in genChemWord]
+    print("Letters guessed: "," ".join(listChemWord))
+
+    userAttempt = input("Make a guess:").upper()
+    #if what the user guessed is part of the word used for game
+    if userAttempt in chemAlphabet - lettersGuessed:
+      lettersGuessed.add(userAttempt)
+      if userAttempt in letterGenChemWords:
       #since of the blank decreases since they user correctly guessed letter
-      letterGenChemWords.remove(userAttempt)
+        letterGenChemWords.remove(userAttempt)
 
 
 #if user chooses a letter they already used
-  elif userAttempt in lettersGuessed:
-    print("Guess a letter you haven't used yet.")
+    elif userAttempt in lettersGuessed:
+     print("Guess a letter you haven't used yet.")
+#if user types invalid response
+    else:
+      print("Please try again.")
 
+#Function when all letters are correctly guessed
 
-
-
-
- 
-
-
-
-
-
- 
+#run the program
 
 
 
